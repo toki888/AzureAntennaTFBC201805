@@ -12,8 +12,8 @@ resource "random_integer" "random_int" {
 
 resource "azurerm_container_group" "aci-cg" {
   name                = "aci-cg-${random_integer.random_int.result}"
-  location            = "${azurerm_resource_group.aci-rg.location}"
-  resource_group_name = "${azurerm_resource_group.aci-rg.name}"
+  location            = "${azurerm_resource_group.ex03.location}"
+  resource_group_name = "${azurerm_resource_group.ex03.name}"
   ip_address_type     = "public"
   dns_name_label      = "${var.dns_name_label_prefix}-aci-cg-${random_integer.random_int.result}"
   os_type             = "linux"
